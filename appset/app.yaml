@@ -17,7 +17,7 @@ spec:
     spec:
       project: 3eb96a4d
       source:
-        repoURL: https://github.com/argoproj/argo-cd.git
+        repoURL: https://github.com/mteodor/helm-charts
         targetRevision: HEAD
         path: '{{.path.path}}'
       destination:
