@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: chart-appset
+  name: chart01-appset
 spec:
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
@@ -13,16 +13,16 @@ spec:
           - path: charts/*
   template:
     metadata:
-      name: '{{.path.basename}}'
+      name: '{{.path.basename}}-01'
     spec:
-      project: "xxxxx"
+      project: 3eb96a4d
       source:
         repoURL: https://github.com/argoproj/argo-cd.git
         targetRevision: HEAD
         path: '{{.path.path}}'
       destination:
         name: cluster11
-        namespace: '{{.path.basename}}'
+        namespace: '{{.path.basename}}-01'
       syncPolicy:
         syncOptions:
           - CreateNamespace=true
