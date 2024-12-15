@@ -24,5 +24,9 @@ spec:
         name: cluster11
         namespace: '{{.path.basename}}-01'
       syncPolicy:
+        automated:
+          selfHeal: true
         syncOptions:
           - CreateNamespace=true
+          - Validate=true
+          - PruneLast=false
