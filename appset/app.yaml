@@ -14,6 +14,7 @@ spec:
   template:
     metadata:
       name: '{{.path.basename}}-01'
+      harness.io/serviceRef: test2
     spec:
       project: 3eb96a4d
       source:
