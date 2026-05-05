@@ -1,0 +1,91 @@
+helm-appset/templates/applicationset.yaml
+  ffe8a714-25bb-4f85-8ee4-059a04217f82 1-19,21-36
+  human 20
+helm-appset/Chart.yaml
+  ffe8a714-25bb-4f85-8ee4-059a04217f82 1-6
+helm-appset/values.yaml
+  ffe8a714-25bb-4f85-8ee4-059a04217f82 1-18
+---
+{
+  "attestations": [
+    {
+      "entries": [
+        {
+          "accepted_lines": 35,
+          "added_lines": 35,
+          "deleted_lines": 0,
+          "hash": "ffe8a714-25bb-4f85-8ee4-059a04217f82",
+          "lines": "1-19,21-36",
+          "overridden_lines": 0
+        },
+        {
+          "accepted_lines": 1,
+          "added_lines": 1,
+          "deleted_lines": 0,
+          "hash": "human",
+          "lines": "20",
+          "overridden_lines": 0
+        }
+      ],
+      "file": "helm-appset/templates/applicationset.yaml"
+    },
+    {
+      "entries": [
+        {
+          "accepted_lines": 6,
+          "added_lines": 6,
+          "deleted_lines": 0,
+          "hash": "ffe8a714-25bb-4f85-8ee4-059a04217f82",
+          "lines": "1-6",
+          "overridden_lines": 0
+        }
+      ],
+      "file": "helm-appset/Chart.yaml"
+    },
+    {
+      "entries": [
+        {
+          "accepted_lines": 18,
+          "added_lines": 18,
+          "deleted_lines": 0,
+          "hash": "ffe8a714-25bb-4f85-8ee4-059a04217f82",
+          "lines": "1-18",
+          "overridden_lines": 0
+        }
+      ],
+      "file": "helm-appset/values.yaml"
+    }
+  ],
+  "base_commit_sha": "0e06d9eb6416788d54f894a3afe8cb47814d4e6e",
+  "branch": "helm-appset",
+  "commit_sha": "68506e985d14e5dd46ab577d16cb70a76da6d316",
+  "commit_time": "2026-05-05T18:51:18+02:00",
+  "commit_type": "direct_commit",
+  "git_ai_version": "1.4.2",
+  "prompts": {
+    "ffe8a714-25bb-4f85-8ee4-059a04217f82": {
+      "accepted_lines": 59,
+      "agent_id": {
+        "id": "ffe8a714-25bb-4f85-8ee4-059a04217f82",
+        "model": "claude-opus-4-6",
+        "tool": "claude"
+      },
+      "human_author": "Mirko Teodorović <mirko.teodorovic@gmail.com>",
+      "messages": [],
+      "overriden_lines": 0,
+      "total_additions": 59,
+      "total_deletions": 0
+    },
+    "human": {
+      "accepted_lines": 1,
+      "agent_id": null,
+      "human_author": "Mirko Teodorović <mirko.teodorovic@gmail.com>",
+      "messages": [],
+      "overriden_lines": 0,
+      "total_additions": 1,
+      "total_deletions": 0
+    }
+  },
+  "repo": "https://github.com/mteodor/helm-charts01",
+  "schema_version": "authorship/3.0.0"
+}
