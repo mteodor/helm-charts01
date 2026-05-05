@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: {{ .Values.appset.name }}
+  namespace: {{ .Values.namespace }}
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+    - git:
+        repoURL: {{ .Values.appset.generator.repoURL }}
+        revision: {{ .Values.appset.generator.revision | default "HEAD" }}
+        directories:
+          - path: {{ .Values.appset.generator.path }}
+  template:
+    metadata:
+      name: '{{`{{.path.basename}}`}}{{ .Values.appset.template.nameSuffix }}'
+      labels:
+        harness.io/serviceRef: {{ .Values.appset.template.serviceRef }}
+        harness.io/envRef: {{ .Values.appset.template.envRef }}
+    spec:
+      project: {{ .Values.appset.project }}
+      source:
+        repoURL: {{ .Values.appset.generator.repoURL }}
+        targetRevision: {{ .Values.appset.generator.revision | default "HEAD" }}
+        path: '{{`{{.path.path}}`}}'
+      destination:
+        name: {{ .Values.appset.template.destination.name }}
+        namespace: '{{`{{.path.basename}}`}}{{ .Values.appset.template.nameSuffix }}'
+      syncPolicy:
+        automated:
+          selfHeal: {{ .Values.appset.template.syncPolicy.selfHeal }}
+        syncOptions:
+          - CreateNamespace={{ .Values.appset.template.syncPolicy.createNamespace }}
+          - Validate={{ .Values.appset.template.syncPolicy.validate }}
+          - PruneLast={{ .Values.appset.template.syncPolicy.pruneLast }}
